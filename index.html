@@ -178,14 +178,14 @@
 	        </g>
 	    </g>
 	    <circle cx="0" cy="0" r="1" style="opacity: 0;">
-			<animateTransform attributeType="XML" attributeName="transform" type="translate" to="1,0" begin="none" dur="1s" fill="freeze" id="to_down" />
+			<animateTransform attributeType="XML" attributeName="transform" type="translate" to="1,0" begin="2s;to_up.end + 4s" dur="1s" fill="freeze" id="to_down" />
 	    </circle>
 	    <circle cx="0" cy="0" r="1" style="opacity: 0;">
-			<animateTransform attributeType="XML" attributeName="transform" type="translate" to="1,0" begin="none" dur="1s" fill="freeze" id="to_up" />
+			<animateTransform attributeType="XML" attributeName="transform" type="translate" to="1,0" begin="to_down.end + 4s" dur="1s" fill="freeze" id="to_up" />
 	    </circle>
 	</svg>
 
-	<script>
+<!-- 	<script>
 		const to_down = document.querySelector("#logoScrollAnimation #to_down")
 		const to_up = document.querySelector("#logoScrollAnimation #to_up")
 		let compressed = false
@@ -202,7 +202,7 @@
 			}
 			scrollBarPosition = scrollY
 		})
-	</script>
+	</script> -->
 
 </body>
 </html>
