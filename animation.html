@@ -195,15 +195,19 @@
 		var to_up = document.querySelector("#logoScrollAnimation #to_up");
 		var compressed = false;
 		var scrollBarPosition = 0;
+		var time
 		addEventListener('scroll', function () {
-		  if (window.scrollY > scrollBarPosition && !compressed) {
-		    compressed = true;
-		    to_down.beginElement();
-		  } else if (window.scrollY < scrollBarPosition && compressed) {
-		    compressed = false;
-		    to_up.beginElement();
-		  }
-		  scrollBarPosition = window.scrollY;
+			clearTimeout(time)
+			time = setTimeout(()=>{
+			  if (window.scrollY > scrollBarPosition && !compressed) {
+			    compressed = true;
+			    to_down.beginElement();
+			  } else if (window.scrollY < scrollBarPosition && compressed) {
+			    compressed = false;
+			    to_up.beginElement();
+			  }
+			  scrollBarPosition = window.scrollY;
+			},100)
 		});
 	</script>
 
